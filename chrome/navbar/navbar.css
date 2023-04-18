@@ -2,9 +2,6 @@
     display: none !important;
 }
 
-toolbox#navigator-toolbox {
-    border-bottom: solid var(--dividers) var(--sidebar-shadow-color) !important;
-}
 
 #nav-bar {
     min-height: 36px !important;
@@ -12,6 +9,18 @@ toolbox#navigator-toolbox {
     padding-inline: 5px 6px !important;
     background-color: var(--toolbar-bgcolor) !important;
     padding: 8px !important;
+}
+
+/* make borders from inner content rounded */
+@media all and (display-mode: browser) {
+	#tabbrowser-tabpanels browser[type="content"] {
+        color-scheme: unset !important;
+		border-top-left-radius: 18px;
+	}
+}
+
+#tabbrowser-tabpanels {
+	background-color: var(--toolbar-bgcolor) !important;;
 }
 
 toolbar .toolbarbutton-1 > .toolbarbutton-icon {
@@ -128,4 +137,3 @@ toolbox[id="navigator-toolbox"]:hover #PersonalToolbar {
 toolbarbutton[class="bookmark-item"]:not(:hover) {
     opacity: 0.6 !important;
 }
-
