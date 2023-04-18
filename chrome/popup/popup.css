@@ -116,8 +116,10 @@ menupopup menuitem,
 menupopup menu,
 .autocomplete-richlistitem {
     height: 32px !important;
-    padding: 0 16px !important;
-    border: 0 !important;
+    padding: 3px 10px !important;
+    border-radius: 6px !important;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 #context-navigation menu:where([_moz-menuactive="true"]:not([disabled="true"])),
@@ -706,7 +708,6 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label {
     margin-inline-end: 16px !important;
     height: 32px !important;
     min-width: 32px !important;
-    border-radius: 16px !important;
     fill: currentColor !important;
     -moz-context-properties: fill, fill-opacity !important;
     display: block !important;
@@ -898,4 +899,3 @@ richlistitem:-moz-any([originaltype="generatedPassword"], [originaltype="loginWi
         content: url(menu-right-2x.svg) !important;
     }
 }
-
