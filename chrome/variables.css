@@ -14,6 +14,7 @@
     --toolbar-non-lwt-textcolor: var(--toolbar-color) !important;
     --toolbar-field-focus-border-color: var(--lwt-toolbar-field-color) !important;
     --toolbarbutton-height: var(--button-size) !important;
+    --toolbarbutton-border-radius: 7px !important;
 
     --toolbar-field-background-color: var(--dark-1) !important;
     --toolbar-field-focus-background-color: var(--dark-1) !important;
@@ -146,7 +147,7 @@
     --autocomplete-popup-highlight-color: var(--light-2) !important;
 
     /* urlbar icon */
-    --toolbarbutton-hover-background: var(--dark-4) !important;
+    --toolbarbutton-hover-background: var(--dark-2) !important;
     --toolbarbutton-active-background: var(--dark-base) !important;
 
     --sidebar-shadow-color: var(--dark-0);
@@ -246,4 +247,3 @@
 /*     --toolbarbutton-hover-background: var(--dark-4) !important; */
 /*     --toolbarbutton-active-background: var(--dark-base) !important; */
 /* } */
-
