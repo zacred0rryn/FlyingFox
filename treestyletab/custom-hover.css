@@ -1,22 +1,21 @@
-
 :root{ 
-  --dark-0: #151D28;
+  --dark-0: #151d28;
   --dark-base: #192330;
   --dark-1: #233143;
-  --dark-2: #2A3B51;
-  --dark-3: #374E6C;
-  --dark-4: #3E5879;
-  --light-0: #D7DFEA;
+  --dark-2: #2a3b51;
+  --dark-3: #374e6c;
+  --dark-4: #3e5879;
+  --light-0: #d7dfea;
   --light-base: #afc0d5;
-  --light-1: #A1B5CE;
-  --light-2: #94ABC7;
-  --light-3: #87A0C0;
-  --light-4: #7996B9;
+  --light-1: #a1b5ce;
+  --light-2: #94abc7;
+  --light-3: #87a0c0;
+  --light-4: #7996b9;
   --accent: #63cdcf;
   --yellow: #dbc074;
   --green: #5cb8a7;
   --red: #c94f6d;
-/*  --extension-icon-mask: grayscale(0%) invert(75%) sepia(%) saturate(862%) hue-rotate(173deg) brightness(88%); */
+  --extension-icon-mask: saturate(80%);
 }
 
 :root.incognito{ 
@@ -41,11 +40,11 @@
 
 
 :root{
-    --tab-border-radius: 7px; /* border radius of tabs */
+    --tab-border-radius: 10px; /* border radius of tabs */
     --animation-duration: 200ms; /* duration of different animations [0s: turn all animations off] */
-    --spacing: 10px; /* spacing between tabs. [<15px: compact tabs] */
-    --distance-from-edge: 12px; /* distance between tabs, and left-right edges of sidebar*/
-    --hover-text-spacing: 0.2; /* should be left alone. with hover sidebar, if text is visible in collapsed status, increase this */
+    --spacing: 5px; /* spacing between tabs. [<15px: compact tabs] */
+    --distance-from-edge: 7px; /* distance between tabs, and left-right edges of sidebar*/
+    --hover-text-spacing: 0.3; /* should be left alone. with hover sidebar, if text is visible in collapsed status, increase this */
 
 
     --ease-in: cubic-bezier(0.32, 0, 0.67, 0);
@@ -70,109 +69,139 @@
 }
 
 #all-tabs{
-   margin: 10px var(--distance-from-edge);
+   margin: 10px 2px 10px var(--distance-from-edge);
+}
+
+tab-item > * {
+  overflow: visible;
 }
 
 tab-item:not(.collapsed) {
-    margin-top: var(--spacing);
-    border-radius: var(--tab-border-radius);
-    border: none !important;
-    padding-bottom: 2px;
+   margin-top: var(--spacing); 
+  border-radius: var(--tab-border-radius);
+  border: none !important;
+  height: 35px !important;
+  justify-content: center;
 }
 
-tab-item.collapsed{
-    height: 0;
-    margin: 0 !important;
-    padding: 0 !important;
+tab-item.collapsed {
+  height: 0;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-tab-item:not([data-level="0"]):not(.pinned){
-    border-left: dashed 2px var(--light-4) !important;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    margin-top: calc(var(--spacing)/2);
+tab-item:not([data-level="0"]):not(.pinned) {
+  border-left: solid 3px var(--light-4) !important;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: 20px;
+  padding-left: 0px;
+  /* margin-top: calc(var(--spacing)/2); */
 }
 
-tab-item tab-favicon{
-    left: 0;
-    filter: var(--extension-icon-mask);
-    transition: transform calc(var(--animation-duration)*2) var(--ease-out);
+tab-item tab-favicon {
+  left: 0;
+  filter: var(--extension-icon-mask);
+  transition: transform calc(var(--animation-duration) * 2) var(--ease-out);
 }
 
 .highlighter {
-    display: none !important;
+  display: none !important;
+}
+
+tab-item {
+  --tab-size: 34px !important;
+  margin: 4px;
+}
+
+tab-item tab-item-substance {
+  height: var(--tab-size);
+  padding: 4px 0px 4px 4px;
+}
+
+tab-item tab-item-substance .active {
+  height: var(--tab-size);
 }
 
 tab-item .label {
-    color: var(--light-2) !important;
-    padding-bottom: 2px;
+  color: var(--light-1) !important;
+  padding-bottom: 2px;
+  padding-left: 8px;
 }
 
-tab-item .twisty:before{
-   background: var(--light-3) !important;
+/*The drop-down ">" button*/
+tab-item .twisty:before {
+  background: var(--light-1) !important;
 }
 
 tab-item.active .label {
-    color: var(--light-0) !important;
+  color: var(--light-0) !important;
 }
 
 tab-item.active {
-    background: var(--dark-3) !important;
+  background: var(--dark-1) !important;
+  box-shadow: 1px 1px 1px 1px #11121747
 }
 
-
-tab-item:not(.active).highlighted{
-    background: var(--dark-1) !important;
+tab-item:not(.active).highlighted {
+  background: var(--dark-1) !important;
 }
 
 tab-item:not(active):hover {
-    background: var(--dark-1);
+  background: var(--dark-0);
 }
 
+/* The close button */
 tab-item:hover tab-closebox {
-    right: 10px;
-    opacity: 1;
+  right: 10px;
 }
 
 tab-item:not(pinned) tab-closebox {
-    position: absolute;
-    height: 20px;
-    width: 20px;
-    right: -30px;
-    border-radius: 6px;
-    padding-top: 2px;
-    padding-left: 2px;
-    background: var(--light-4);
-    transition: right var(--animation-duration) var(--ease-out);
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  right: -30px;
+  border-radius: 25%;
+  padding-top: 2px;
+  padding-left: 2px;
+  background: var(--light-4);
+  opacity: 1;
+  transition: all var(--animation-duration) var(--ease-out);
+}
+
+
+tab-closebox:hover {
+  transition: background var(--animation-duration) var(--ease-out);
+  background: var(--red);
 }
 
 .sound-button:after {
-    background: var(--light-3) !important;
-    margin-right: 5px;
+  background: var(--light-3) !important;
+  margin-right: 5px;
 }
 
-.counter{
-    color: var(--light-4) !important;
-    background: var(--dark-2) !important;
-    border-radius: 7px;
-    margin: 2px 4px 0px 0px;
-    padding: 0 4px;
-    padding-bottom: 2px;
-    order: -1 !important;
+.counter {
+  color: var(--light-1) !important;
+  background: rgba(66, 66, 66, 0.2666666667) !important;
+  border-radius: 5px;
+  margin: 0px 4px;
+  padding: 2px 5px;
+  font-weight: bold;
+  /* padding-bottom: 2px; */
+  order: -1 !important;
 }
 
-.counter:before, .counter:after{ content: ""}
+.counter:before, .counter:after {  content: "";}
 
 /********LEFT CONTENT TAB(hover)*************/
-
-:root.left tab-item{
-    padding-left: 0px;
+:root.left tab-item {
+  padding-left: 0px;
 }
 
 :root.left tab-item tab-favicon {
-    order: 10 !important;
-    margin-right: calc(var(--collapsed-width)*0.25) !important;
-    transform: scale(120%) translateX(0px) !important;
+  order: 10 !important;
+  margin-right: calc(var(--collapsed-width) * 0.25) !important;
+  transform: scale(110%) translateX(0px) !important;
 }
 
 :root.left tab-item .sound-button:after {
@@ -180,26 +209,26 @@ tab-item:not(pinned) tab-closebox {
     transition: all calc(var(--animation-duration)*2.2) var(--ease-out) !important;
 }
 
-:root.left tab-item .label{
-    transform: translateX(0px);
-    margin-right: calc(var(--collapsed-width)*var(--hover-text-spacing)) !important;
-    transition: all var(--animation-duration) var(--ease-out);
+:root.left tab-item .label {
+  transform: translateX(0px);
+  margin-right: calc(var(--collapsed-width) * var(--hover-text-spacing)) !important;
+  transition: all var(--animation-duration) var(--ease-out);
 }
 
 :root.left tab-item:not(.pinned):hover tab-favicon {
-    transform: scale(120%) translateX(-20px) !important;
+  transform: scale(110%) translateX(-20px) !important;
 }
 
 :root.left tab-item:not([data-child-ids]):hover .label {
-    transform: translateX(-15px);
+  transform: translateX(-15px);
 }
 
-:root.left tab-item:hover .sound-button:after{
-    transform: translateX(-25px);
+:root.left tab-item:hover .sound-button:after {
+  transform: translateX(-25px);
 }
 
-:root.left tab-item[data-child-ids] .twisty{
-    margin-left: 5px;
+:root.left tab-item[data-child-ids] .twisty {
+  margin-left: 5px;
 }
 
 /***********************************/
@@ -310,4 +339,8 @@ tab-item tab-closebox {
 
 tab-item.active .background, tab-item.active tab-item-substance:hover .background, tab-item.bundled-active .background, tab-item.bundled-active tab-item-substance:hover .background, .mutiple-highlighted > tab-item.highlighted .background, .mutiple-highlighted > tab-item.highlighted tab-item-substance:hover .background {
 	box-shadow: none !important;
+}
+
+tab-item-substance {
+	padding: 4px 0.25em;
 }
