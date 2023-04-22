@@ -114,7 +114,7 @@ tab-item {
   margin: 4px;
 }
 
-tab-item tab-item-substance {
+tab-item:not(.pinned) tab-item-substance  {
   height: var(--tab-size);
   padding: 4px 0px 4px 0px;
 }
@@ -279,7 +279,7 @@ tab-item.active tab-closebox:hover::before, tab-item:not(.faviconized).active ta
 /**********PINNED TAB***************/
 
 tab-item.pinned {
-    margin: 5px !important;
+    margin: 5px 0px 0px 10px !important;
     transition  : all 0.1s var(--ease-out);
 }
 
@@ -341,10 +341,6 @@ tab-item tab-closebox {
 
 tab-item.active .background, tab-item.active tab-item-substance:hover .background, tab-item.bundled-active .background, tab-item.bundled-active tab-item-substance:hover .background, .mutiple-highlighted > tab-item.highlighted .background, .mutiple-highlighted > tab-item.highlighted tab-item-substance:hover .background {
 	box-shadow: none !important;
-}
-
-tab-item-substance {
-	padding: 4px 0.25em;
 }
 
 :root.left tab-item:not(.pinned) tab-item-substance {
