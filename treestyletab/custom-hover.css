@@ -38,7 +38,6 @@
   --extension-icon-mask: grayscale(85%) invert(13%) sepia(80%) saturate(3107%) hue-rotate(256deg) brightness(84%) contrast(93%);
 }
 
-
 :root{
     --tab-border-radius: 10px; /* border radius of tabs */
     --animation-duration: 200ms; /* duration of different animations [0s: turn all animations off] */
@@ -114,7 +113,7 @@ tab-item {
   margin: 4px;
 }
 
-tab-item tab-item-substance {
+tab-item:not(.pinned) tab-item-substance {
   height: var(--tab-size);
   padding: 4px 0px 4px 4px;
 }
@@ -277,7 +276,7 @@ tab-closebox:hover {
 /**********PINNED TAB***************/
 
 tab-item.pinned {
-    margin: 5px !important;
+    margin: 5px 0px 0px 10px !important;
     transition  : all 0.1s var(--ease-out);
 }
 
@@ -339,8 +338,4 @@ tab-item tab-closebox {
 
 tab-item.active .background, tab-item.active tab-item-substance:hover .background, tab-item.bundled-active .background, tab-item.bundled-active tab-item-substance:hover .background, .mutiple-highlighted > tab-item.highlighted .background, .mutiple-highlighted > tab-item.highlighted tab-item-substance:hover .background {
 	box-shadow: none !important;
-}
-
-tab-item-substance {
-	padding: 4px 0.25em;
 }
