@@ -10,7 +10,7 @@ Original repo has been quiet the past year so I updated myself to get it working
 
 <p align="center"><img width="720" src="https://github.com/akshat46/FlyingFox/blob/master/img/preview-full.png"></p>
 
-<p align="center"><img width="720" src="https://github.com/akshat46/FlyingFox/blob/master/img/demo-hover.gif"></p>
+<p align="center"><img width="720" src="https://github.com/Astromations/FlyingFox/blob/master/img/demo-hover.gif?raw=true"></p>
 
 <h2 align="center"><a href="https://github.com/akshat46/FlyingFox/wiki">See wiki for more details</a></h2>
 
