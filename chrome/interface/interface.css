@@ -20,10 +20,6 @@ button#editBookmarkPanelDoneButton {
     background-color: var(--lwt-toolbarbutton-icon-fill-attention) !important;
 }
 
-button:hover {
-    transform: translateY(-2px) !important;
-}
-
 #editBookmarkPanel input {
     -moz-appearance: none !important;
     border-radius: 5px;
@@ -31,4 +27,13 @@ button:hover {
     background: var(--lwt-accent-color) !important;
     background-color: var(--lwt-accent-color) !important;
     border-color: var(--arrowpanel-dimmed-further) !important;
+}
+
+tooltip {
+	background-color: var(--dark-1) !important;
+	color: var(--light-base) !important;
+	border: none !important;
+    border: 1px solid var(--toolbar-field-focus-border-color) !important;
+    padding:  4px 10px 4px 10px !important;
+    transition: all 0.2s !important:
 }
