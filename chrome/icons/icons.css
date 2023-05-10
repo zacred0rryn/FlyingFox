@@ -229,7 +229,7 @@ toolbarbutton[class="bookmark-item"][container="true"] > .toolbarbutton-icon {
 
 .tab-icon-image[src="chrome://browser/skin/settings.svg"] ~ .tab-icon-overlay
 {
-    display: -moz-box !important;
+    display: flex !important;
     margin: 0 !important;
     list-style-image: url(settings.svg) !important;
     -moz-context-properties: fill, fill-opacity !important;

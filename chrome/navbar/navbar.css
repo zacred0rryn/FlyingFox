@@ -110,7 +110,7 @@ toolbar:not([customizing="true"])
 /* show "Private" label for en languages only */
 :root[titlemodifier="(Private Browsing)"] #fxa-toolbar-menu-button::before {
     content: "Private" !important;
-    display: -moz-box !important;
+    display: flex !important;
     margin-inline-start: 12px !important;
     margin-inline-end: 6px !important;
 }

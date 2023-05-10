@@ -148,7 +148,7 @@
     background-clip: padding-box !important;
     text-align: center;
     transition: background-color 0.1s var(--ease-basic);
-    -moz-box-align: center !important;
+    align-items: center !important;
     display: block !important;
     padding-bottom: 0px !important;
     top: 0px !important;
@@ -174,7 +174,7 @@
     background-clip: padding-box !important;
     text-align: center;
     transition: background-color 0.1s var(--ease-basic);
-    -moz-box-align: center !important;
+    align-items: center !important;
     display: block !important;
     padding-bottom: 0px !important;
     top: 0 !important;
@@ -346,7 +346,7 @@
 #urlbar[pageproxystate="valid"]
     #identity-box:-moz-any(.mixedActiveBlocked, .mixedDisplayContentLoadedActiveBlocked, .mixedActiveContent)
     > #connection-icon {
-    display: -moz-box !important;
+    display: flex !important;
 }
 
 #urlbar[pageproxystate="valid"]
