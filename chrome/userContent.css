@@ -60,3 +60,6 @@
     }
 
   }
+
+:root{   
+  scrollbar-color: var(--light-1) var(--dark-base) !important; }
