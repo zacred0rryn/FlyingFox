@@ -148,7 +148,7 @@ scrollbox[orient=vertical] /* >=71 */ {
 /* this is a bit depressing... */
 /* work around lack of ::part selector support */
 :root {
-    --scrollbutton-display: -moz-box !important;
+    --scrollbutton-display: flex !important;
 }
 
 /* hide ancient-looking scrollbuttons in menupopups */
@@ -342,7 +342,7 @@ panelview .toolbarbutton-1,
 }
 
 :root[fxastatus="signedin"] #appMenu-fxa-label > .toolbarbutton-icon {
-    display: -moz-box !important;
+    display: flex !important;
     border-radius: 99px !important;
     padding: 2px !important;
 }
@@ -413,7 +413,7 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label {
 
 #tracking-protection-preferences-button > .toolbarbutton-text {
     padding-inline-end: 4px !important;
-    -moz-box-ordinal-group: 0 !important;
+    order: 0 !important;
 }
 
 .identity-popup-section {
@@ -434,8 +434,8 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label {
     width: 32px !important;
     max-height: 32px !important;
     margin-inline-start: auto !important;
-    -moz-box-pack: center !important;
-    -moz-box-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
     background-image: none !important;
 }
 
@@ -463,7 +463,7 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label {
 }
 
 #identity-popup-mainView-panel-header {
-    -moz-box-align: start !important;
+    align-items: start !important;
     padding: 16px !important;
 }
 
@@ -765,7 +765,7 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label {
     content: url(checkmark.svg) !important;
     -moz-context-properties: fill, fill-opacity !important;
     fill: currentColor !important;
-    display: -moz-box !important;
+    display: flex !important;
     width: 18px !important;
     height: 18px !important;
     margin-inline-start: 16px !important;
