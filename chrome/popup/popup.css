@@ -47,7 +47,6 @@ panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox,
 .popup-internal-box,
 panel[type="autocomplete-richlistbox"] > .autocomplete-richlistbox,
 .menupopup-arrowscrollbox {
-    margin: 0 !important;
     padding: 8px 0 !important;
     border-radius: 7px !important;
     color: inherit !important;
