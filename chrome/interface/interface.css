@@ -1,3 +1,6 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("chrome://browser/content/browser.xhtml");
+
 #customization-footer button,
 #editBookmarkPanelBottomButtons button {
     -moz-appearance: none !important;
@@ -55,3 +58,48 @@ tooltip {
   outline: 2px solid var(--dark-4) !important;
   color: var(--light-base) !important;
 }
+
+/* SIDEBAR CSS */
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+#bookmarks-view, #sidebar-search-container {
+  background-color: var(--dark-base);
+}
+
+#search-box {
+  appearance: unset !important;
+  -moz-default-appearance: unset !important;
+  cursor: text;
+  margin: 4px 4px !important;
+  padding: 4px 2px 5px !important;;
+  padding-inline-start: 8px !important;;
+  background-color: var(--dark-1) !important;
+  color: var(--light-base) !important;
+  border-radius: 5px !important;
+}
+
+#search-box:focus {
+  outline: 2px solid var(--dark-4) !important;
+  color: var(--light-base) !important;
+}
+
+#bookmarks-view, #historyTree {
+   background-color: var(--dark-base) !important;
+}
+
+#historyTree #viewButton {
+  background-color: var(--dark-1);
+  color: var(--light-base) !important;;
+  padding: 2px 3px !important;
+  border: 1px solid var(--dark-4);
+}
+
+#bookmarks-view treechildren::-moz-tree-image(container),
+#PlacesToolbarItems toolbarbutton[container="true"] .toolbarbutton-icon,
+#PlacesToolbarItems menu[container="true"] .menu-iconic-left,
+#BMB_bookmarksPopup menu[container="true"] .menu-iconic-icon {
+  fill: var(--light-2) !important; 
+}
+
+:root{   
+    scrollbar-color: var(--light-1) var(--dark-base) !important; }
+
