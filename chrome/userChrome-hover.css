@@ -1,17 +1,12 @@
-#sidebar-box {
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] {
     z-index: 1000 !important;
     position: relative !important;
     min-width: var(--sidebar-collapsed-width) !important;
     max-width: var(--sidebar-collapsed-width) !important;
 }
 
-#sidebar-header,
-#sidebar-splitter {
-    display: none !important;
-}
-
 /* inner width = expanded width & move inner to only show initial-width long section */
-#sidebar-box #sidebar {
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar {
     position: absolute !important;
     min-width: var(--sidebar-width) !important;
     max-width: var(--sidebar-width) !important;
@@ -23,16 +18,16 @@
 /* move inner to show entire sidebar */
 #sidebar-box #sidebar:hover {
     transform: translateX(0px) !important;
-    box-shadow: 2px 0 33px -3px var(--sidebar-shadow-color);
 }
 
 #sidebar-box[sidebarcommand="viewBookmarksSidebar"] #sidebar {
     transform: translateX(0px) !important;
-    box-shadow: 2px 0 33px -3px var(--sidebar-shadow-color);
 }
+
 /* hide sidebar header for tree style tabs sidebar */
-#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
-    display: none;
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header,
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-splitter {
+    display: none !important;
 }
 
 #sidebar {
