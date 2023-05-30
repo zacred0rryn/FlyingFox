@@ -69,3 +69,8 @@
 .titlebar-restore:hover {
     opacity: 1 !important;
 }
+
+/* Window Controls Hide On Fullscreen */
+#navigator-toolbox[inFullscreen="true"] > #titlebar > toolbar > .titlebar-buttonbox-container > .titlebar-buttonbox > .titlebar-button {
+    display: none !important;
+}
