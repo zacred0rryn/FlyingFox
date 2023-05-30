@@ -416,7 +416,7 @@ panelmultiview .toolbaritem-combined-buttons > spacer.after-label {
 }
 
 .identity-popup-section {
-    padding: 16px !important;
+    padding: 0px !important;
     display: flex !important;
 }
 
