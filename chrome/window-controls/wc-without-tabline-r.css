@@ -11,6 +11,10 @@
     margin-right: calc(var(--wc-left-space) * 2 + 60px) !important;
 }
 
+:root toolbar#nav-bar {
+    margin-right: calc(var(--wc-left-space) * 2 + 60px) !important;
+}
+
 .titlebar-buttonbox {
     flex-direction: row !important;
 }
