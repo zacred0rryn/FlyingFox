@@ -4,9 +4,7 @@
 
 <h5 align="center"><a href="https://github.com/Astromations/FlyingFox/releases">Get it here</a> and <a href="http://flyingfox.netlify.app">visit the app</a> to customize</h5>
 
-## Updated for Firefox Version 111.01 
-
-Original repo has been quiet the past year so I updated myself to get it working for 111.01. I'm an ameteur, so there may be bugs. Please report any problems or missing features. 
+## Updated for 113
 
 <p align="center"><img width="720" src="https://github.com/akshat46/FlyingFox/blob/master/img/preview-full.png"></p>
 
