@@ -11,7 +11,6 @@
 }
 
 .titlebar-button {
-    transition: all 0.3s ease !important;
     padding: 0px 8px !important;
     background: none !important;
     -moz-context-properties: fill, fill-opacity !important;
