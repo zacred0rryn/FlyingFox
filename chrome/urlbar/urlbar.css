@@ -148,7 +148,7 @@
     background-clip: padding-box !important;
     text-align: center;
     transition: background-color 0.1s var(--ease-basic);
-    align-items: center !important;
+    -moz-box-align: center !important;
     display: block !important;
     padding-bottom: 0px !important;
     top: 0px !important;
@@ -174,7 +174,7 @@
     background-clip: padding-box !important;
     text-align: center;
     transition: background-color 0.1s var(--ease-basic);
-    align-items: center !important;
+    -moz-box-align: center !important;
     display: block !important;
     padding-bottom: 0px !important;
     top: 0 !important;
@@ -200,7 +200,7 @@
 }
 
 #urlbar[focused] {
-    outline: 1px solid var(--toolbar-field-focus-border-color) !important;
+    outline: 2px solid var(--dark-3) !important;
     padding: 0 !important;
     margin: 0 !important;
 }
@@ -227,11 +227,6 @@
 /* 71+ */
 #urlbar-background {
     display: none !important;
-}
-
-#urlbar-input-container,
-#searchbar {
-    align-items: center !important;
 }
 
 .urlbar-input-box,
@@ -336,47 +331,6 @@
 #urlbar[pageproxystate="valid"] #identity-box.extensionPage > #identity-icon {
     list-style-image: none !important;
     margin-inline-end: -16px !important;
-}
-
-/* no longer used as a connection icon 
-#connection-icon {
-    display: none !important;
-}
-
-#urlbar[pageproxystate="valid"]
-    #identity-box:-moz-any(.mixedActiveBlocked, .mixedDisplayContentLoadedActiveBlocked, .mixedActiveContent)
-    > #connection-icon {
-    display: flex !important;
-}
-
-#urlbar[pageproxystate="valid"]
-    #identity-box:-moz-any(.weakCipher, .certUserOverridden, .certErrorPage, .insecureLoginForms, .mixedActiveContent) {
-    color: #c94031 !important;
-}
-
-.urlbar-input {
-    padding: 0 !important;
-}
-
-.searchbar-textbox {
-    border: 0 !important;
-    background: 0 !important;
-    box-shadow: none !important;
-    margin: 0 !important;
-    -moz-appearance: none !important;
-}
-
-.searchbar-search-icon {
-    margin: 0 !important;
-    fill-opacity: 1 !important;
-}
-
-.searchbar-search-icon-overlay {
-    margin-inline-start: -11px !important;
-    margin-inline-end: 0 !important;
-
-    /* not really useful anyway 
-    display: none !important;
 }
 
 /* Refers to URLBAR ICONS */
@@ -696,4 +650,3 @@
 #identity-box[pageproxystate="valid"].extensionPage>.identity-box-button[open=true] {
     background-color: hsla(0, 0%, 70%, .3) !important;
 }
-
