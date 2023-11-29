@@ -1,348 +1,76 @@
-:root{ 
-  --dark-0: #151D28;
-  --dark-base: #192330;
-  --dark-1: #233143;
-  --dark-2: #2A3B51;
-  --dark-3: #374E6C;
-  --dark-4: #3E5879;
-  --light-0: #D7DFEA;
-  --light-base: #afc0d5;
-  --light-1: #A1B5CE;
-  --light-2: #94ABC7;
-  --light-3: #87A0C0;
-  --light-4: #7996B9;
-  --accent: #63cdcf;
-  --yellow: #dbc074;
-  --green: #5cb8a7;
-  --red: #c94f6d;
-/*  --extension-icon-mask: grayscale(0%) invert(75%) sepia(%) saturate(862%) hue-rotate(173deg) brightness(88%); */
+:root.sidebar #background {
+  background: #192330;
 }
 
-:root.incognito{ 
-  --dark-0: #1C0E34;
-  --dark-base: #20103c;
-  --dark-1: #2F1D4E;
-  --dark-2: #38225D;
-  --dark-3: #4A2D7B;
-  --dark-4: #53338A;
-  --light-0: #CC6B9C;
-  --light-base: #B9407C;
-  --light-1: #AB3B73;
-  --light-2: #9C3569;
-  --light-3: #8D305E;
-  --light-4: #7D2B54;
-  --accent: #e9207e;
-  --yellow: #C9B336;
-  --green: #36C987;
-  --red: #C9365D;
-  --extension-icon-mask: grayscale(85%) invert(13%) sepia(80%) saturate(3107%) hue-rotate(256deg) brightness(84%) contrast(93%);
+tab-item .background {
+  border-radius: 0.72em;
 }
 
-
-:root{
-    --tab-border-radius: 10px; /* border radius of tabs */
-    --animation-duration: 200ms; /* duration of different animations [0s: turn all animations off] */
-    --spacing: 5px; /* spacing between tabs. [<15px: compact tabs] */
-    --distance-from-edge: 7px; /* distance between tabs, and left-right edges of sidebar*/
-    --hover-text-spacing: 0.3; /* should be left alone. with hover sidebar, if text is visible in collapsed status, increase this */
-
-
-    --ease-in: cubic-bezier(0.32, 0, 0.67, 0);
-    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-    --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-
-    --collapsed-width: 60px;
-  
-    --contextual-identity-color-blue: #63B3ED;
-    --contextual-identity-color-orange: #F6AD55;
-    --contextual-identity-color-green: #68D391;
-    --contextual-identity-color-pink: #F687B3;
+tab-item.active .background {
+  background: #233143;
 }
 
-/************UNCUSTOMIZED CSS************/
-#tabbar-container #tabbar{
-   margin-bottom: 15px !important;
+/* show separator space between root level tabs */
+tab-item[data-level="0"] {
+  margin-top: calc(var(--tab-size) / 12); /* please change this as you like */
+}
+/* cancel needless separators on exceptions */
+tab-item[data-level="0"].pinned,
+tab-item[data-level="0"].pinned + tab-item[data-level="0"],
+tab-item[data-level="0"] + tab-item[data-level="0"]:not([data-child-ids]) {
+  margin-top: 0;
 }
 
-:root, #background{
-    background:  var(--dark-base) !important;
+/* Show title of unread tabs with bold and italic font */
+:root.sidebar tab-item.unread .label-content {
+  font-weight: bold !important;
+  font-style: italic !important;
 }
 
-#all-tabs{
-   margin: 10px 2px 10px var(--distance-from-edge);
+/* gray out suspended tabs */
+.tab.discarded {
+  opacity: 0.75;
 }
 
-tab-item > * {
-  overflow: visible;
+/* show close box when hovering */
+.tab:not(:hover) .closebox{
+	display:none
 }
 
-tab-item:not(.collapsed) {
-   margin-top: var(--spacing); 
-  border-radius: var(--tab-border-radius);
-  border: none !important;
-  height: 35px !important;
-  justify-content: center;
+tab-item tab-closebox::before {
+  border-radius: 3px; /* vary between 0 and 10 to make the background rounder */
+}
+/* I find these work well on my monitor (slightly darker than the normal tab color) but YMMV */
+tab-item tab-closebox:hover::before {
+  background: #7D6565AF;
+  opacity: 1; /* defaults to 0.1 */
+}
+tab-item.active tab-closebox:hover::before {
+  background: #9F2D2DAF;
 }
 
-tab-item.collapsed {
-  height: 0;
-  margin: 0 !important;
-  padding: 0 !important;
+/* use favicon instead of arrows to (un)expend a tab group */
+tab-item tab-twisty {
+  margin-right: -1em;
+  opacity: 0 !important;
+  position: relative;
+  z-index: 10000;
 }
 
-tab-item:not([data-level="0"]):not(.pinned) {
-  border-left: solid 3px var(--light-4) !important;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-  margin-left: 20px;
-  padding-left: 0px;
-  /* margin-top: calc(var(--spacing)/2); */
+/* adjust tab borders horizontally */
+tab-item-substance {
+  border-right: solid 6px #192330;
+  border-left: solid 6px #364c69; 
 }
 
-tab-item tab-favicon {
-  left: 0;
-  filter: var(--extension-icon-mask);
-  transition: transform calc(var(--animation-duration) * 2) var(--ease-out);
+tab-item:not(.pinned) tab-item-substance {
+  padding-left: 10px !important; /* !important is required when there are enough tabs to cause a scrollbar */
 }
 
-.highlighter {
-  display: none !important;
-}
-
+/* height of tabs */
 tab-item {
-  --tab-size: 34px !important;
-  margin: 4px;
+  --tab-size: 42px !important;
 }
-
-tab-item:not(.pinned) tab-item-substance  {
+tab-item  tab-item-substance {
   height: var(--tab-size);
-  padding: 4px 0px 4px 0px;
-}
-
-tab-item tab-item-substance .active {
-  height: var(--tab-size);
-}
-
-tab-item .label {
-  color: var(--light-1) !important;
-  padding-bottom: 2px;
-  padding-left: 8px;
-}
-
-/*The drop-down ">" button*/
-tab-item .twisty:before {
-  background: var(--light-1) !important;
-}
-
-
-tab-item.active .label {
-  color: var(--light-0) !important;
-}
-
-tab-item.active {
-  background: var(--dark-1) !important;
-  box-shadow: 1px 1px 1px 1px #11121747
-}
-
-tab-item:not(.active).highlighted {
-  background: var(--dark-1) !important;
-}
-
-tab-item:not(active):hover {
-  background: var(--dark-0);
-}
-
-/* The close button */
-tab-item:hover tab-closebox {
-  right: 10px;
-}
-
-tab-item:not(pinned) tab-closebox {
-  position: absolute;
-  height: 20px;
-  width: 20px;
-  right: -30px;
-  border-radius: 25%;
-  padding-top: 2px;
-  padding-left: 2px;
-  background: var(--light-4);
-  opacity: 1;
-  transition: all var(--animation-duration) var(--ease-out);
-}
-
-
-tab-closebox:hover {
-  transition: background var(--animation-duration) var(--ease-out);
-  background: var(--red);
-}
-
-.sound-button:after {
-  background: var(--light-3) !important;
-  margin-right: 5px;
-}
-
-.counter {
-  color: var(--light-1) !important;
-  background: rgba(66, 66, 66, 0.2666666667) !important;
-  border-radius: 5px;
-  margin: 0px 4px;
-  padding: 2px 5px;
-  font-weight: bold;
-  /* padding-bottom: 2px; */
-  order: -1 !important;
-}
-
-.counter:before, .counter:after {  content: "";}
-
-/********LEFT CONTENT TAB(hover)*************/
-:root.left tab-item {
-  padding-left: 0px;
-}
-
-:root.left tab-item tab-favicon {
-  margin-right: calc(var(--collapsed-width) * 0.15) !important;
-  margin-left: 5px;
-  transform: scale(110%) translateX(0px) !important;
-}
-
-:root.left tab-item .sound-button:after {
-  transform: translateX(-15px); !important;
-  transition: all calc(var(--animation-duration)*2.2) var(--ease-out) !important;
-}
-
-:root.left tab-item:hover .sound-button:after {
-  transform: translateX(-30px); !important;
-  transition: all calc(var(--animation-duration)*2.2) var(--ease-out) !important;
-}
-
-tab-item.active tab-closebox:hover::before, tab-item:not(.faviconized).active tab-sound-button:hover::before {
-	background: none;
-}
-
-:root.left tab-item .label {
-  transform: translateX(0px);
-  margin-right: calc(var(--collapsed-width) * var(--hover-text-spacing)) !important;
-  transition: all var(--animation-duration) var(--ease-out);
-}
-
-:root.left tab-item:not([data-child-ids]):hover .label {
-  transform: translateX(-10px);
-}
-
-:root.left tab-item[data-child-ids] .twisty {
-  margin-left: 5px;
-}
-
-/***********************************/
-
-.tab
-    .favicon
-    .favicon-default::before {
-    filter: var(--extension-icon-mask); /* change for light theme */
-}
-
-.tab[data-current-favicon-uri="undefined"]
-    .favicon
-    .favicon-default::before{
-    background: url("chrome://branding/content/identity-icons-brand.svg") no-repeat center !important;
-    mask: none !important;
-}
-
-/***********NEW TAB BUTTON**********/
-
-.newtab-button-box {
-    border: none !important;
-    margin: 0 50px;
-}
-
-.newtab-button {
-    border: none !important;
-    border-radius: 8px;
-    padding: 8px 0 !important;
-    margin: 0 5px;
-}
-
-.newtab-button::before{
-   background: var(--light-3) !important;
-}
-
-.newtab-action-selector-anchor {
-    border: none !important;
-    margin-right: 10px;
-    margin-top: 3px;
-}
-
-.newtab-button:hover {
-    background: var(--dark-1);
-}
-
-/**********PINNED TAB***************/
-
-tab-item.pinned {
-    margin: 5px 0px 0px 10px !important;
-    transition  : all 0.1s var(--ease-out);
-}
-
-/**********CONTAINERS***************/
-
-.contextual-identity-marker{
-    position: absolute !important;
-    left: 0 !important;
-    top: 0 !important;
-    bottom: 0 !important;
-}
-
-tab-item.active .contextual-identity-marker {
-    display: none !important;
-}
-
-.contextual-identity-firefox-container-1:not(.active),
-.contextual-identity-firefox-container-2:not(.active),
-.contextual-identity-firefox-container-3:not(.active),
-.contextual-identity-firefox-container-4:not(.active){
-   border-top-left-radius: 0px !important;
-  border-bottom-left-radius: 0px !important;
-}
-
-tab-item.active.contextual-identity-firefox-container-1 {
-    background: linear-gradient(to right, #3182CE , #0BC5EA) !important;
-}
-
-tab-item.active.contextual-identity-firefox-container-2 {
-    background: linear-gradient(to right, #DD6B20 , #F56565) !important;
-}
-
-tab-item.active.contextual-identity-firefox-container-3 {
-   background: linear-gradient(to right, #38A169 , #38B2AC) !important;
-}
-
-tab-item.active.contextual-identity-firefox-container-4 {
-   background: linear-gradient(to right, #D53F8C , #9F7AEA) !important;
-}
-
-/***********************************/
-
-#all-tabs {
-    border: none !important;
-}
-
-tab-item .background, .after-tabs button:hover::before, .after-tabs [role="button"]:hover::before, #subpanel-selector-anchor:hover::before {
-	background-color: unset !important;
-	background-image: unset !important;
-	border-radius: unset !important;
-}
-
-tab-item tab-closebox {
-	background: none transparent;
-	border: none 0 transparent;
-	margin: var(--tab-closebox-negative-offset) 0;
-	padding: 0;
-}
-
-tab-item.active .background, tab-item.active tab-item-substance:hover .background, tab-item.bundled-active .background, tab-item.bundled-active tab-item-substance:hover .background, .mutiple-highlighted > tab-item.highlighted .background, .mutiple-highlighted > tab-item.highlighted tab-item-substance:hover .background {
-	box-shadow: none !important;
-}
-
-:root.left tab-item:not(.pinned) tab-item-substance {
-	margin-left: 0px;
 }
