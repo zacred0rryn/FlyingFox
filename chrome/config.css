@@ -12,8 +12,8 @@
     --dark-4: #3e5879;
     --light-0: #d7dfea;
     --light-base: #afc0d5;
-    --light-1: #a1b5ce;
-    --light-2: #94abc7;
+    --light-1: #ffffff;
+    --light-2: #d4deeb;
     --light-3: #87a0c0;
     --light-4: #7996b9;
     --accent: #63cdcf;
@@ -36,7 +36,7 @@
     /* uncomment and add gradient value for selected tab gradient*/
 
     /******WINDOW CONTROL PLACEMENT VARS******/
-    --wc-vertical-shift: 18px;
+    --wc-vertical-shift: 16px;
     /* larger value moves window controls down,*/
     /* can be negative(moves controls up) */
     /* Experiemntal: 55px if tabline visible, -25px if tabline hidden */
@@ -59,8 +59,8 @@
     --dark-4: #53338a;
     --light-0: #cc6b9c;
     --light-base: #b9407c;
-    --light-1: #ab3b73;
-    --light-2: #9c3569;
+    --light-1: #ffffff;
+    --light-2: #da88b1;
     --light-3: #8d305e;
     --light-4: #7d2b54;
     --accent: #e9207e;

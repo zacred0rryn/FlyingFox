@@ -11,10 +11,6 @@
     padding: 8px !important;
 }
 
-#navigator-toolbox {
-   transition: margin-top var(--transition-time) var(--ease-out);
-}
-
 /* make borders from inner content rounded */
 @media all and (display-mode: browser) {
 	#tabbrowser-tabpanels browser[type="content"] {
@@ -114,7 +110,7 @@ toolbar:not([customizing="true"])
 /* show "Private" label for en languages only */
 :root[titlemodifier="(Private Browsing)"] #fxa-toolbar-menu-button::before {
     content: "Private" !important;
-    display: -moz-box !important;
+    display: flex !important;
     margin-inline-start: 12px !important;
     margin-inline-end: 6px !important;
 }

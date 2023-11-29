@@ -1,9 +1,9 @@
 /*-min max close size*/
 .titlebar-button > .toolbarbutton-icon {
-    height: 14px !important;
-    min-height: 14px !important;
-    width: 14px !important;
-    min-width: 14px !important;
+    height: 18px !important;
+    min-height: 18px !important;
+    width: 18px !important;
+    min-width: 18px !important;
 }
 
 #titlebar {
@@ -11,6 +11,7 @@
 }
 
 .titlebar-button {
+    transition: all 0.3s ease !important;
     padding: 0px 8px !important;
     background: none !important;
     -moz-context-properties: fill, fill-opacity !important;
@@ -26,7 +27,7 @@
     -moz-appearance: none !important;
     fill: var(--red) !important;
     opacity: 0.7 !important;
-    list-style-image: url(circle.svg) !important;
+    list-style-image: url(circle-close-p.svg) !important;
 }
 
 .titlebar-close:hover {
@@ -38,7 +39,7 @@
     -moz-appearance: none !important;
     fill: var(--yellow) !important;
     opacity: 0.7 !important;
-    list-style-image: url(circle.svg) !important;
+    list-style-image: url(circle-min-p.svg) !important;
 }
 
 .titlebar-min:hover {
@@ -50,7 +51,7 @@
     -moz-appearance: none !important;
     fill: var(--green) !important;
     opacity: 0.7 !important;
-    list-style-image: url(circle.svg) !important;
+    list-style-image: url(circle-max.svg) !important;
 }
 
 .titlebar-max:hover {
@@ -62,7 +63,7 @@
     -moz-appearance: none !important;
     fill: var(--green) !important;
     opacity: 0.7 !important;
-    list-style-image: url(circle.svg) !important;
+    list-style-image: url(circle-max-p.svg) !important;
 }
 
 .titlebar-restore:hover {
